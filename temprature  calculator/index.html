@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temperature Converter - Convert Celsius, Fahrenheit, and Kelvin with validation.">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page-container">
+        <section class="converter-card" aria-labelledby="converter-title">
+            <h1 id="converter-title">Temperature Converter</h1>
+            <p class="subtitle">
+                Convert between Celsius, Fahrenheit, and Kelvin.
+            </p>
+
+            <form id="converter-form" novalidate>
+                <div class="form-group">
+                    <label for="temperature-input">
+                        Temperature value
+                    </label>
+                    <input
+                        type="text"
+                        id="temperature-input"
+                        name="temperature"
+                        placeholder="Example: 25, -10, 37.5"
+                        inputmode="decimal"
+                        autocomplete="off"
+                        aria-describedby="input-error"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="unit-select">
+                        Input unit
+                    </label>
+                    <select id="unit-select" name="unit">
+                        <option value="celsius" selected>
+                            Celsius (°C)
+                        </option>
+                        <option value="fahrenheit">
+                            Fahrenheit (°F)
+                        </option>
+                        <option value="kelvin">
+                            Kelvin (K)
+                        </option>
+                    </select>
+                </div>
+
+                <button type="submit" id="convert-button">
+                    Convert
+                </button>
+            </form>
+
+            <p id="input-error" class="error-message" role="alert" aria-live="polite"></p>
+
+            <section id="results" class="results" aria-live="polite" hidden>
+                <h2>Converted Values</h2>
+
+                <div class="result-grid">
+                    <article class="result-card">
+                        <span class="result-label">Celsius</span>
+                        <strong id="result-celsius">--</strong>
+                    </article>
+
+                    <article class="result-card">
+                        <span class="result-label">Fahrenheit</span>
+                        <strong id="result-fahrenheit">--</strong>
+                    </article>
+
+                    <article class="result-card">
+                        <span class="result-label">Kelvin</span>
+                        <strong id="result-kelvin">--</strong>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+/* 
+   RESET AND BASE STYLES
+   ================================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-page: #f3f7ff;
+    --bg-card: #ffffff;
+    --primary-blue: #2563eb;
+    --primary-blue-dark: #1d4ed8;
+    --text-dark: #0f172a;
+    --text-muted: #475569;
+    --error-red: #dc2626;
+    --result-bg: #f8fafc;
+    --border-color: #cbd5e1;
+    --radius: 12px;
+    --shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* 
+   MAIN CENTERED LAYOUT
+   ======================================== */
+
+.page-container {
+    width: 100%;
+    max-width: 560px;
+}
+
+.converter-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 32px;
+}
+
+.converter-card h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 28px;
+    line-height: 1.5;
+}
+
+/* 
+   FORM STYLES
+   ======================================== */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+button {
+    width: 100%;
+    padding: 13px 16px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: var(--primary-blue);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+button:hover {
+    background-color: var(--primary-blue-dark);
+    transform: translateY(-1px);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.4);
+    outline-offset: 2px;
+}
+
+/* 
+   ERROR MESSAGE
+   ======================================== */
+
+.error-message {
+    min-height: 24px;
+    margin-top: 16px;
+    color: var(--error-red);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* 
+   RESULTS SECTION
+   ======================================== */
+
+.results {
+    margin-top: 28px;
+    border-top: 2px solid #e2e8f0;
+    padding-top: 24px;
+}
+
+.results h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.result-card {
+    background: var(--result-bg);
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+}
+
+.result-label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.result-card strong {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+}
+
+/* 
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (min-width: 560px) {
+    .result-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .result-card strong {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .converter-card {
+        padding: 24px 18px;
+    }
+
+    .converter-card h1 {
+        font-size: 1.7rem;
+    }
+}
+
+/* 
+   HIDDEN UTILITY
+   ======================================== */
+
+[hidden] {
+    display: none !important;
+}
